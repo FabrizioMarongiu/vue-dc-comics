@@ -28,12 +28,14 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 10px;
 }
 #app {
   height:100vh;
 }
 .container{
   width: 1000px;
+  height: 100%;
   margin: 0 auto;
 }
 </style>

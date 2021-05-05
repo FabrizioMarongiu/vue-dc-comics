@@ -6,6 +6,8 @@
 
     <div class="jumbo-btm">
         <div class="container">
+                    <a href="#" class="btn">current series</a>
+
             <div class="comics">
                 <Cards 
                 v-for="(element, index) in immagini"
@@ -101,7 +103,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .w30{
         width: 30px;
     }
@@ -132,6 +134,7 @@ export default {
     .jumbo{
         overflow: hidden;
         height:300px;
+        
     }
     .jumbo img{
         width: 100%;
@@ -144,11 +147,33 @@ export default {
         height:500px;
         background-color: #1c1c1c;
         padding: 20px;
+        position: relative;
     }
     .comics{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .btn{
+        display:inline-block;
+        width: 200px;
+        height: 50px;
+        background-color: #0282f9;
+        text-transform: uppercase;
+        position: absolute;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        padding: 13px;
+        color: white;
+        left: 200px;
+        top: -25px;
+        z-index: 10;
+        &:hover{
+            text-decoration: none;
+            background-color: #4e91cf;
+        }
     }
     
     /* .card {

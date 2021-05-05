@@ -6,10 +6,11 @@
 
     <div class="jumbo-btm">
         <div class="container">
-                    <a href="#" class="btn">current series</a>
+                    <a href="#" class="btn abs">current series</a>
 
             <div class="comics">
-                <Cards 
+                <div class="box-card">
+                    <Cards 
                 v-for="(element, index) in immagini"
                 :key="index" 
                 :immagine="element" />
@@ -19,9 +20,10 @@
                     </div>
                     <span class="img-text">action comix</span>
                 </div> -->
+                </div>
                 
                 
-                
+                <a href="#" class="btn">load more</a>
             </div>
         
         </div>
@@ -144,12 +146,20 @@ export default {
         top: 0;
     }
     .jumbo-btm{
-        height:500px;
+        height:600px;
         background-color: #1c1c1c;
         padding: 20px;
         position: relative;
     }
+
     .comics{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-card{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -161,19 +171,23 @@ export default {
         height: 50px;
         background-color: #0282f9;
         text-transform: uppercase;
-        position: absolute;
         text-decoration: none;
         text-align: center;
         font-size: 20px;
         padding: 13px;
         color: white;
-        left: 200px;
-        top: -25px;
-        z-index: 10;
+        
         &:hover{
             text-decoration: none;
             background-color: #4e91cf;
         }
+    }
+
+.abs{
+        position: absolute;
+        left: 200px;
+        top: -25px;
+        z-index: 10;
     }
     
     /* .card {

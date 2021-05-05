@@ -15,7 +15,7 @@
   </header>
 </template>
 
-<script>
+<script scoped>
 export default {
     name: 'Header',
     data(){
@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .header{
         width: 100%;
         height:100px;

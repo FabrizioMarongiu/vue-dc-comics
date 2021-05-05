@@ -1,20 +1,39 @@
 <template>
   <main class="main">
-      <div class="text">
-          <div class=" container">
-        --> content goes here
-          </div>
-        </div>
-          <div class="blue-section">
-              <div class="flex-col container">
-                  <div class="card"
-                  v-for="(element, index) in link"
-                  :key="index">
-                        <img class="w50" :src= " element.img " alt="Logo">
-                        <span class="card-text" >{{ element.nome }}</span>
+    <div class="jumbo">
+        <img src="@/assets/dc-comics-assets/img/jumbotron.jpg" alt="">
+    </div>
+
+    <div class="jumbo-btm">
+        <div class="container">
+            <div class="comics">
+                <Cards 
+                v-for="(element, index) in immagini"
+                :key="index" 
+                :immagine="element" />
+                <!-- <div class="card">
+                    <div class="img-box">
+                         <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX" alt=""> 
                     </div>
+                    <span class="img-text">action comix</span>
+                </div> -->
+                
+                
+                
+            </div>
+        
+        </div>
 
-
+    </div>
+   
+    <div class="blue-section">
+        <div class="flex-col container">
+            <div class="card-icon"
+            v-for="(element, index) in link"
+            :key="index">
+                <img class="w50" :src= " element.img " alt="Logo">
+                <span class="card-text" >{{ element.nome }}</span>
+             </div>
                     <!-- <div class="card">
                         <img class="w50" src="@/assets/dc-comics-assets/img/buy-comics-digital-comics.png" alt="">
                         <span class="card-text" >digital comics</span>
@@ -35,16 +54,21 @@
                         <img class="w50" src="@/assets/dc-comics-assets/img/buy-dc-power-visa.svg" alt="">
                         <span class="card-text" >digital comics</span>
                     </div> -->
-              </div>
-            
-          </div>
+        </div>         
+    </div>
       
   </main>
 </template>
 
 <script>
+import Cards from '@/components/Cards.vue';
+import imgComics from '@/data/imgComics.js';
+
 export default {
     name:'Main',
+    components: {
+        Cards,
+    },
     data(){
         return {
             link: [
@@ -68,7 +92,8 @@ export default {
                     nome: 'dc power visa',
                     img: require('@/assets/dc-comics-assets/img/buy-dc-power-visa.svg'),
                 },
-            ]
+            ],
+            immagini: imgComics,
 
 
         }
@@ -76,14 +101,7 @@ export default {
 }
 </script>
 
-<style>
-    .text{
-        width: 100%;
-        height:100px; 
-        background-color: #1c1c1c;
-        color:white;
-        font-size: 50px;
-    }
+<style scoped>
     .w30{
         width: 30px;
     }
@@ -99,7 +117,7 @@ export default {
         display: flex;
         justify-content: space-between;
     }
-    .card{
+    .card-icon{
         display: flex;
         align-items: center;
         width: 100%;
@@ -110,4 +128,52 @@ export default {
         text-transform: uppercase;
         margin-left: 20px;
     }
+
+    .jumbo{
+        overflow: hidden;
+        height:300px;
+    }
+    .jumbo img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        position: relative;
+        top: 0;
+    }
+    .jumbo-btm{
+        height:500px;
+        background-color: #1c1c1c;
+        padding: 20px;
+    }
+    .comics{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    /* .card {
+        flex-basis: calc( 100% / 6 - 20px );
+        margin: 0 10px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .img-box{
+        overflow: hidden;
+        width: 100%;
+        height: 150px;
+    }
+
+    .img-box img{
+        width: 100%;
+    }
+
+    .img-text{
+        color: white;
+        text-transform: uppercase;
+    } */
+  
+
+    
 </style>

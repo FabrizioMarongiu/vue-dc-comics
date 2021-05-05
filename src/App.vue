@@ -4,7 +4,7 @@
     <Header/>
 
     <!-- MAIN -->
-    <main>main</main>
+    <Main />
 
     <!-- FOOTER -->
     <footer>footer</footer>
@@ -14,11 +14,15 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import Main from '@/components/Main.vue';
+
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Main,
+   
   }
 }
 </script>
@@ -28,6 +32,8 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body{
   font-size: 10px;
 }
 #app {
